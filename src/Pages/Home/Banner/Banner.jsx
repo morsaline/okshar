@@ -66,7 +66,7 @@ const Banner = () => {
             <Link key={index} to={`/bcs/${categoryItem?.category}`}>
               {" "}
               <div
-                className={`flex gap-2 px-4 py-2 items-center ${categoryItem.bgColor} text-white font-bold`}
+                className={`flex gap-2 px-4 py-2 items-center ${categoryItem.bgColor} text-white font-bold hover:bg-slate-600 transition-all duration-300`}
               >
                 <img src={categoryItem?.image} alt="" className="w-[25px]" />
                 <p className="text-[12px]">{categoryItem.category}</p>
@@ -85,16 +85,17 @@ const Banner = () => {
           className="mySwiper h-96"
         >
           {banners?.map((banner, index) => (
-            <div key={index}>
+            <div key={index} className="bg-black bg-opacity-50">
               <SwiperSlide>
                 <div
                   className="h-[450px] bg-center bg-cover relative -z-10"
                   style={{ backgroundImage: `url(${banner.image})` }}
                 >
-                  <div className="font-semibold text-[24px] absolute top-[21%] left-[15%]">
+                  <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
+                  <div className="font-semibold text-[24px] text-white absolute top-[21%] left-[15%]">
                     <p className="my-2 w-[400px] leading-10">{banner.title}</p>
 
-                    <button className="p-2 border border-black text-[11px] my-3">
+                    <button className="p-2 border border-white text-[11px] my-3">
                       {banner.button}
                     </button>
                   </div>

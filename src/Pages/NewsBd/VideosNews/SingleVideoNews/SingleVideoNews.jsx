@@ -25,7 +25,7 @@ const SingleVideoNews = () => {
     <div className="container mx-auto py-10">
       {news ? (
         <div className="flex lg:flex-nowrap md:flex-wrap flex-wrap gap-10 mx-5">
-          <div className="lg:w-6/12 md:w-full">
+          <div className="lg:w-6/12 md:w-full h-full">
             <YouTubeEmbed videoId={`${news.video}`}></YouTubeEmbed>
           </div>
           <div className="w-full">

@@ -21,7 +21,7 @@ const VideosNews = () => {
           {" "}
           <img src={bgTitle} alt="" className="w-[80%]" />
           <p className="absolute top-[30%] left-[15%] text-white font-bold text-[18px]">
-            {videosNews?.categoryTitle}
+            {videosNews[0]?.categoryTitle}
           </p>
         </div>
       </div>
@@ -39,7 +39,7 @@ const VideosNews = () => {
           <p className="text-[12px]">
             {videosNews[0]?.description.slice(0, 190) + "..."}
           </p>
-          <Link to={`News/${videosNews[0]?._id}`}>
+          <Link to={`/videosNews/${videosNews[0]?._id}`}>
             {" "}
             <button className="px-2 py-1 border-2 border-black rounded my-2">
               বিস্তারিত
@@ -68,15 +68,18 @@ const VideosNews = () => {
                   </div>
                 </div>
                 <div>
-                  <button className="px-2 py-1 border-2 border-black rounded my-2">
-                    বিস্তারিত
-                  </button>
+                  <Link to={`/videosNews/${singleNews._id}`}>
+                    {" "}
+                    <button className="px-2 py-1 border-2 border-black rounded my-2">
+                      বিস্তারিত
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
           <div>
-            <Link to={`/allNews/${videosNews?.categoryTitle}`}>
+            <Link to={`/allVideosNews`}>
               <button className="w-full text-center p-2 border rounded font-bold mt-1">
                 সব খবর
               </button>

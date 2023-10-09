@@ -5,15 +5,15 @@ import { useParams } from "react-router-dom";
 
 const SingleNewsDetails = () => {
   const { _id } = useParams();
-  const [news, setNews] = useState(null);
-  // console.log(category, id);
+  const [news, setNews] = useState({});
+  console.log(_id);
   useEffect(() => {
     // Fetch the news data from the JSON file
     fetch("../../../../../public/okshar.news.json")
       .then((res) => res.json())
       .then((data) => {
         // const findCategory = data?.find((news) => news.category == category);
-
+        console.log(data);
         const singleNews = data?.find((news) => news._id == _id);
         setNews(singleNews);
       })

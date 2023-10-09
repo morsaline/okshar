@@ -30,11 +30,13 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex gap-5 justify-around items-center my-4">
-        <img src={logo} alt="okshar logo" />
+        <img src={logo} alt="okshar logo" className="w-[80px]" />
         <ul className="flex gap-3">
           {Links?.map((link, index) => (
             <Link key={index} to={link.href} className="text-[14px]">
-              <li>{link.text}</li>
+              <li className="hover:text-sky-400 uppercase font-semibold transition-all duration-300">
+                {link.text}
+              </li>
             </Link>
           ))}
         </ul>

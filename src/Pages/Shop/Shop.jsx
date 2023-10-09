@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
 // import SingleLandscapeView from "./SingleLandscapeView.jsx/SingleLandscapeView";
-import shopBanner from "../../assets/shop/shopImage1.jpg";
+import shopBanner from "../../assets/shop/ShopImage2.webp";
 import SingleLandscapeView from "./SingleLandscapeView/SingleLandscapeView";
 import ReactPaginate from "react-paginate";
 

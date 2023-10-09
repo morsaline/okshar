@@ -30,6 +30,13 @@ const BcsData = ({ data, category }) => {
           </div>
         )}
       </div>
+      <div>
+        {data?.name == "সাধারণজ্ঞান" && (
+          <div>
+            <Prili data={data}></Prili>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
