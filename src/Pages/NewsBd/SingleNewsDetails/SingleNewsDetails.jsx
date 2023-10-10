@@ -34,13 +34,20 @@ const SingleNewsDetails = () => {
   return (
     <div className="container mx-auto py-10">
       {news ? (
-        <div className="flex lg:flex-nowrap md:flex-wrap flex-wrap gap-10 mx-5">
-          <div className="lg:w-6/12 md:w-full">
-            <img src={news?.image} className="w-full" alt="" />
+        <div className="mx-5 shadow-md rounded-sm p-5">
+          <div className=" md:w-full h-[390px]">
+            <img
+              src={news?.image}
+              className="w-full h-full object-cover rounded-md"
+              alt=""
+            />
           </div>
-          <div className="w-full">
-            <h2 className="text-3xl mb-3">{news.title}</h2>
-            <p>{news.description}</p>
+          <div className="w-full mt-5">
+            <h2 className="text-3xl mb-3 leading-normal font-medium">
+              {news.title}
+            </h2>
+            <hr className="mb-5" />
+            <p className="leading-7">{news.description}</p>
           </div>
         </div>
       ) : (

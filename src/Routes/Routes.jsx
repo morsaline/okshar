@@ -51,6 +51,10 @@ const router = createBrowserRouter([
         element: <SingleVideoNews />,
       },
       {
+        path: "/AllvideosNews/videosNews/:_id",
+        element: <SingleVideoNews />,
+      },
+      {
         path: "/allnews/:category",
         element: <AllNews />,
       },

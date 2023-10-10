@@ -81,14 +81,7 @@ const SingleProductDetails = () => {
                     <div className="space-y-4">
                       <p className="py-5">{product.description}</p>
                       <div className="flex gap-5">
-                        <button className="lg:w-full border rounded-none border-black bg-white lg:px-8 px-2 md:px-8 py-3 flex items-center gap-3 text-xl">
-                          <Icon
-                            className="text-2xl  font-bold"
-                            icon="streamline:interface-favorite-heart-reward-social-rating-media-heart-it-like-favorite-love"
-                          />{" "}
-                          Wish List
-                        </button>
-                        <button className="border-black border lg:px-8 px-4 lg:py-0 md:py-0 py-3 lg:w-full md:w-auto w-full text-xl font-semibold">
+                        <button className="border-black border lg:px-8 px-4 lg:py-0 md:py-0 py-4 lg:w-full md:w-auto w-full text-xl font-semibold">
                           Add to Cart
                         </button>
                       </div>

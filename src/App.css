@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* body {
+  font-family: "Bangla", Arial, sans-serif !important;
+} */
 /* SingleProduct Css */
 
 .productCart {
@@ -13,6 +17,13 @@
 .product:hover .productCart {
   visibility: visible;
   opacity: 1;
+}
+
+.product:hover .productImg {
+  background-image: linear-gradient(180deg, #1d1c3a 0%, transparent 95%);
+  transition: all 300ms ease-in-out;
+
+  background-position: 100% 0;
 }
 
 /* single product details img gallery slider */
@@ -64,4 +75,62 @@
 .image-gallery-thumbnail:focus {
   outline: none;
   border: 2px solid #0c4e67 !important;
+}
+
+/* pagination css */
+.paginationBttns {
+  width: 100%;
+
+  padding: 6px;
+  list-style: none;
+  justify-content: center;
+  display: flex;
+  gap: 2px;
+}
+.paginationBttns a {
+  padding: 3px 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  /* font-weight: 600; */
+  /* color: white; */
+  /* background-color: rgb(156, 150, 150); */
+  border: 1px solid gray;
+}
+
+.paginationBttns a:hover {
+  background-color: indigo;
+  color: white;
+}
+/* .prevBttn,
+.nextBttn {
+  padding: 3px 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(156, 150, 150);
+} */
+.paginationdisabled {
+  /* padding: 3px, 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border: 2px solid gray; */
+}
+
+.paginationActive a {
+  background-color: indigo;
+  color: white;
+  /* font-weight: 600; */
+  /* border: 2px solid indigo; */
+  /* border-color: indigo; */
+}
+
+.paginationBttn {
+  /* padding: 3px, 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 2px solid gray; */
 }

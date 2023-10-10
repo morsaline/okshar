@@ -14,9 +14,9 @@ import ReactPaginate from "react-paginate";
 
 const Shop = () => {
   const [showByView, setshowByView] = useState("gridview");
-  const [price, setPrice] = useState(50); // Initial value
+  const [price, setPrice] = useState(10); // Initial value
   const [products, setProducts] = useState([]);
-  // const [page, setPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(7);
   const [itemOffset, setItemOffset] = useState(0);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -60,7 +60,7 @@ const Shop = () => {
     }
   };
   // {''''''''''''''react paginataion start'''''''''''''''''}
-  const itemsPerPage = 7;
+  // const itemsPerPage = 7;
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = filteredProducts.slice(itemOffset, endOffset);
@@ -76,6 +76,11 @@ const Shop = () => {
   };
 
   // {''''''''''''''react paginataion end'''''''''''''''''}
+
+  const handleShowPage = (e) => {
+    const value = e.target.value;
+    setItemsPerPage(value);
+  };
 
   //   const colors = [
   //     { color: "bg-orange-600", name: "orange" },
@@ -111,12 +116,12 @@ const Shop = () => {
 
   return (
     <div className="w-10/12 mx-auto  mt-5">
-      <div className="flex  gap-4 items-center mb-5">
+      {/* <div className="flex  gap-4 items-center mb-5">
         <Icon icon="ion:home-sharp" className="hover:text-pink-500" />{" "}
         <Icon icon="ic:baseline-greater-than" /> <span>Shop</span>
-      </div>
+      </div> */}
       <div className="flex flex-col md:flex-row gap-5">
-        <div className="md:w-[30%] w-full ">
+        {/* <div className="md:w-[30%] w-full ">
           <div className="bg-gray-200 p-5 mb-5 h-screen">
             <h1 className="pb-5 border-b-2 pl-3 font-bold mt-4 border-gray-400 uppercase">
               Catalog
@@ -138,10 +143,10 @@ const Shop = () => {
               <p className="text-orange-500 font-bold"> £60 - £{price}</p>
             </div>
           </div>
-        </div>
-        <div className="md:w-[70%] w-full ">
+        </div> */}
+        <div className=" w-full ">
           <div>
-            <img src={shopBanner} className="w-full h-[200px] " alt="" />
+            <img src={shopBanner} className="w-full h-[250px] " alt="" />
           </div>
           <div className="">
             <div className="mt-5">
@@ -178,11 +183,24 @@ const Shop = () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <span>Show</span>
-                  <select name="" id="">
-                    <option value="">24</option>
-                    <option value="">12</option>
+                  <select name="" id="" onChange={handleShowPage}>
+                    <option value={24}>24</option>
+                    <option value={12}>12</option>
                   </select>
                   <span>per page</span>
+                </div>
+                <div className=" flex items-center gap-1">
+                  {" "}
+                  <h2 className="  ">Price :</h2>
+                  <input
+                    type="range"
+                    min={10}
+                    max={10000}
+                    value={price}
+                    onChange={handleSliderChange}
+                    className=""
+                  />
+                  <p className="text-orange-500 font-bold"> £10 - £{price}</p>
                 </div>
               </div>
             </div>
@@ -190,7 +208,7 @@ const Shop = () => {
               <div
                 className={`${
                   showByView == "gridview"
-                    ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+                    ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  "
                     : "flex flex-col gap-6"
                 }`}
               >
@@ -198,7 +216,10 @@ const Shop = () => {
                   currentItems?.map((product, idx) => (
                     <Link key={idx} to={`/products/${product._id}`}>
                       {showByView == "gridview" ? (
-                        <SingleProduct product={product}></SingleProduct>
+                        <SingleProduct
+                          product={product}
+                          idx={idx}
+                        ></SingleProduct>
                       ) : (
                         <SingleLandscapeView
                           product={product}
@@ -223,12 +244,18 @@ const Shop = () => {
             <div className="flex gap-2 items-center mt-3">
               <ReactPaginate
                 breakLabel="..."
-                nextLabel="next >"
+                nextLabel=">"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={5}
                 pageCount={pageCount}
-                previousLabel="< previous"
+                previousLabel="<"
                 renderOnZeroPageCount={null}
+                containerClassName="paginationBttns"
+                previousLinkClassName="prevBttn"
+                nextLinkClassName="nextBttn"
+                disabledClassName="paginationdisabled"
+                activeClassName="paginationActive"
+                // pageLinkClassName="paginationBttn"
               />
             </div>
           </div>

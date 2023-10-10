@@ -56,7 +56,7 @@ const News = ({ news }) => {
           <div className="grid grid-cols-2 gap-3">
             {news?.slice(0, 4).map((singleNews, idx) => (
               <Link to={`/news/${singleNews._id}`} key={idx}>
-                <div className="flex items-center gap-4  mb-3 border p-2">
+                <div className="flex items-center gap-4  mb-3 border p-2 shadow-lg">
                   <div className="overflow-hidden">
                     <div className=" w-full overflow-hidden ">
                       {" "}
